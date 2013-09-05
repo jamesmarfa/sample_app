@@ -9,6 +9,11 @@ describe "Authentication" do
     it { should have_content('Sign In') }
   end
 
+  describe "not signed in navigation" do
+    it { should_not have_selector('Profile') }
+    it { should_not have_selector('Settings')}
+  end
+
   describe "signin" do
     describe "with invalid information" do
       before { click_button "Sign in" }
